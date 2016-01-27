@@ -1,0 +1,8 @@
+logspout:
+  image: 'gliderlabs/logspout:latest'
+  command: '-c ''/bin/logspout <your-papertrailapp/syslog-endpoint> '''
+  deployment_strategy: every_node
+  entrypoint: /bin/sh
+  restart: always
+  volumes:
+    - '/var/run/docker.sock:/tmp/docker.sock'
